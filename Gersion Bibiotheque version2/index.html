@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./code/index.css" media="all">
+  <link rel="icon" href="./images/icon.png"  />
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <title>Gestion Bibliothèque</title>
+</head>
+<body>
+<div id="sup">
+    <h1>Bienvennue dans l'application:<br> Gestion des Ouvrages dans une Bibliothèque "Version2"</h1>
+  </div>
+  <div id="section1">
+      <div class="saisi">
+        <h3>Ouvrage caractéristiques :</h3>
+        
+        <form action="#" autocomplete="off" onsubmit="event.preventDefault()">
+          
+          <label for="titre"> Titre d'ouvrage:* <br /></label>
+          <input type="text" name="titre" id="titre" placeholder="Entrer 30 carctères maximum" maxlength="30" required  /> <br>
+
+          <label for="auteur">Auteur d'ouvrage :* <br /> </label>
+          <input type="text" name="auteur" id="auteur" placeholder="Entrer 30 carctères maximum" maxlength="30"  required/><br>
+
+          <label for="prix">Prix d'ouvrage :* <br> </label>
+          <input type="text" name="prix" id="prix" placeholder="Entrer un Prix reel de la form xx.yy"  required pattern="\d+(.\d{2})*"/><br>
+
+          <label for="date">Date de publication d'ouvrage:* <br /></label>
+          <input type="date" name="date" id="date" required/><br>
+
+          <label >Language d'ouvrage:* <br /></label>
+          <select id="Selectlangue" required>
+            <option></option>
+            <option value="Français">Français</option>
+            <option value="Anglais">Anglais</option>
+            <option value="Arabe">Arabe</option>
+            <option value="Espagnol">Espagnol</option>
+          </select><br>
+          
+          <label for="email" >L'email de l'auteur: *<br/></label>
+          <input type='email' name='email' id='email' autocomplete="off" placeholder='Entrer une adresse email valide' required /></br>
+
+          <div class="flexbtn">
+            <div>
+            <label >Type d'ouvrage: *<br/></label>
+            <div class="Radiobtns" id="Radiobtns" >
+            <input type='radio' id='roman' value='Roman'  name='name' required checked>
+            <label for='roman'>Roman</label>
+            <br>
+            <input type='radio' id='essai' value='Essai'   name='name' required>
+            <label for='essai'>Essai</label>
+            <br>
+            <input type='radio' id='bd' value='Bande-Dessinée'   name='name' required>
+            <label for='Bande-Dessinée'>Bande-Dessinée</label>
+            </div>
+            </div>
+            <input type="image" src="./fonts/plus-circle-solid.svg" class="inputInsérer" id="submit" >
+            </div>
+
+            <p> *  : tous ces champs sont obligatoires en cas d'insertion <br>mais pas en cas de modification</p>
+        </form>
+      </div>
+
+      <img src="./images/bibl-removebg-preview.png" alt="Bibliothèque" />
+
+    </div>
+
+<main>
+  <div id="section2">
+    <table id="totales-ouvrages">
+      <h2>Tableau des Ouvrages :</h2>
+      <thead>
+        <tr>
+          <th>Son titre</th>
+          <th>Son auteur</th>
+          <th>Son prix</th>
+          <th>Sa date de publication</th>
+          <th>Sa langue</th>
+          <th>Email de l'auteur</th>
+          <th>Son type</th>
+          <th id="clr">Modifier</th>
+          <th id="clr">Suprimer</th>
+        </tr>
+      </thead>
+      <tbody id="tbody1" >  <!--add row  -->
+      </tbody>
+    </table>
+  </div>
+    <div  id='imprimer_zone' >
+    <div class="memoire">
+      <button class="Charger" onclick="Storage();"> LocalStorage</button>  
+      <button onclick="vider();" id="vider" class="close-btn"> Suprimer </button>
+    </div>
+    <button type="submit" id="btn">Imprimer</button>
+   </div> 
+  </main>
+  
+  
+  <div id="modal">
+  </div>
+<script src="./code/index.js"></script>
+</body>
+</html>
